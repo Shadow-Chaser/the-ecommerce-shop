@@ -4,9 +4,20 @@ import { removeFromCart } from '../../redux/actions/cartAction';
 import { Link } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
-import Modal from 'react-modal';
 import Checkout from '../Checkout';
+import Modal from 'react-modal';
+import Zoom from 'react-reveal/Zoom';
 
+const customStyles = {
+   content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+   },
+};
 const Cart = () => {
    const [procedBol, setProcedBol] = useState(false);
    // const [input, setInput] = useState('');
@@ -25,15 +36,6 @@ const Cart = () => {
    const handleProced = bol => {
       setProcedBol(bol);
    };
-
-   // const handleInput = e => {
-   //    setInput(e.target.value);
-   // };
-   // const orderCheckout = e => {
-   //    e.preventDefault();
-   // };
-
-   // const handleClick = () => {};
 
    const [modalIsOpen, setIsOpen] = useState(false);
    function openModal() {
@@ -86,10 +88,18 @@ const Cart = () => {
                </div>
             </Fade>
          )}
-         <Checkout>
-            modalIsOpen={modalIsOpen}
-            closeModal={closeModal}
-         </Checkout>
+
+         <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+            style={{ width: '80%' }}
+         >
+            <Zoom>
+               <h1>Your order has been placed successfuly</h1>
+            </Zoom>
+         </Modal>
       </div>
    );
 };
