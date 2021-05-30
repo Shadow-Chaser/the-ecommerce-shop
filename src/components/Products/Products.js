@@ -9,6 +9,8 @@ const Products = () => {
         return state.product.products;
     })
 
+    console.log(products);
+
     return (
         <div class="row mt-3">
             {
