@@ -11,3 +11,4 @@ export const removeFromCart = (payload) => {
         payload
     }
 }
+
