@@ -2,8 +2,8 @@ import React from 'react';
 import Modal from 'react-modal';
 import Zoom from "react-reveal/Zoom";
 import { Link } from 'react-router-dom';
-
-
+import { addToCart } from '../../redux/actions/cartAction';
+import { useDispatch } from 'react-redux';
 
 const customStyles = {
     content: {
@@ -19,6 +19,9 @@ const customStyles = {
 Modal.setAppElement('#root')
 const ProductForm = ({ modalIsOpen, closeModal, product }) => {
     const {title, price, description, image} = product;
+
+    const dispatch = useDispatch();
+
     return (
         <div>
         <Modal
@@ -42,7 +45,7 @@ const ProductForm = ({ modalIsOpen, closeModal, product }) => {
                                 <h4 class="card-title">{title}</h4>
                                 <p class="card-text">{description}</p>
                                 <p class="card-text">${price}</p>
-                                <Link class="btn btn-danger" onClick={closeModal}>Add To Cart</Link>
+                                    <Link onClick={() => dispatch(addToCart(product))} class="btn btn-danger" >Add To Cart</Link>
                             </div>
                         </div>
                     </div>

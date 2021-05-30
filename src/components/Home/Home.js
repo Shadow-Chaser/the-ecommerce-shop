@@ -12,7 +12,7 @@ const Home = () => {
         <div className="container">
             <div className="row">
                 <div className="col-md-9 my-2">
-                    <Filter handleChange={handleChange}></Filter>
+                    {/* <Filter handleChange={handleChange}></Filter> */}
                     <Products category={category}></Products>
                 </div>
                 <div className="col-md-3">
