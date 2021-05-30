@@ -25,7 +25,7 @@ const ProductList = ({product}) => {
             </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                     <h5><strong>${product.price}</strong></h5>
-                    <Link onClick={() => dispatch(addToCart(product))} className="btn btn-danger">Add To Cart</Link>
+                    <Link onClick={() => dispatch((addToCart(product)))} className="btn btn-danger">Add To Cart</Link>
             </div>
         </div>
         <ProductForm modalIsOpen={modalIsOpen} product={product} closeModal={closeModal}></ProductForm>
