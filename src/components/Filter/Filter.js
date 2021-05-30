@@ -1,7 +1,8 @@
 import React from 'react';
 import './Filter.css';
 
-const Filter = () => {
+const Filter = ({handleChange}) => {
+   
     return (
         <div className="filter d-flex justify-content-around">
             <div className="filter-result">
@@ -10,35 +11,11 @@ const Filter = () => {
             </div>
             <div className="filter-sort">
                 Order{" "}
-                <select
-                // value={this.props.sort}
-                // onChange={(e) =>
-                //   this.props.sortProducts(
-                //     this.props.filteredProducts,
-                //     e.target.value
-                //   )
-                // }
-                >
-                    <option value="latest">Latest</option>
-                    <option value="lowest">Lowest</option>
-                    <option value="highest">Highest</option>
-                </select>
-            </div>
-            <div className="filter-size">
-                Filter{" "}
-                <select
-                // value={this.props.size}
-                // onChange={(e) =>
-                //   this.props.filterProducts(this.props.products, e.target.value)
-                // }
-                >
-                    <option value="">ALL</option>
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
+                <select onChange={(e)=>handleChange(e)}>
+                    <option value="Men's Clothing">Men's Clothing</option>
+                    <option value="Jewelry">Jewelry</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Women's Clothing">Women's Clothing</option>
                 </select>
             </div>
         </div>

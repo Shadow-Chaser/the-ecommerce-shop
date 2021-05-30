@@ -11,6 +11,11 @@ const ProductList = ({product}) => {
     function closeModal(){
       setIsOpen(false);
     }
+
+    const handleCart= () =>{
+        
+    }
+
     return (
         <div class="col-md-6 col-sm-12 col-lg-4 mb-3">
         <div class="card h-100" onClick={()=> openModal()}>
@@ -20,7 +25,7 @@ const ProductList = ({product}) => {
             </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <h5><strong>$120</strong></h5>
-                <Link className="btn btn-danger">Add To Cart</Link>
+                <Link className="btn btn-danger" onClick={handleCart}>Add To Cart</Link>
             </div>
         </div>
         <ProductForm modalIsOpen={modalIsOpen} product={product} closeModal={closeModal}></ProductForm>
